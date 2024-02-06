@@ -6,10 +6,10 @@ Este repositorio contiene un Dockerfile para construir una imagen Docker con un 
 
 Paso 1:
 
-Para construir la imagen Docker, coloca este Dockerfile en un directorio y ejecuta el siguiente comando en la terminal desde ese directorio:
+Para construir la imagen Docker, clona el repositorio a un directorio en tu computadore, posicionandote en este directorio, ejecuta el siguiente comando desde una terminal:
 
 ```bash
-    docker build -t mi-webserver-nginx
+    docker buildx build . -t "mi-nginx"
 ```
 
 Esto construirá la imagen utilizando el Dockerfile y la etiquetará como "mi-webserver-nginx".
@@ -19,14 +19,14 @@ Paso 2:
 Luego, para ejecutar un contenedor basado en esta imagen, puedes usar el siguiente comando:
 
 ```bash
-    docker run -p 8080:80 mi-webserver-nginx
+    docker run -p 8080:80 mi-nginx
 ```
 
 Esto mapea el puerto 8080 de tu máquina host al puerto 80 del contenedor Nginx. Puedes cambiar los números de puerto según tus preferencias.
 
 Paso 3: 
 
-Después de ejecutar el contenedor, puedes acceder a tu servidor web Nginx visitando http://localhost:8080 en tu navegador, como en este ejemplo:
+Después de ejecutar el contenedor, puedes acceder a tu servidor web Nginx visitando http://localhost:8080 en tu navegador, obteniendo un resultado como en este ejemplo:
 
 ![Webserver](./media/webserver-access.png)
 
@@ -50,6 +50,6 @@ Con esto, podrás ver que el servicio contiene mi nombre.
 
 ## Revisión en Docker Hub
 
-Esta imagen está presente en Docker Hub. Verifica su existencia siguiendo el enlace
+Esta imagen está presente en Docker Hub. Verifica su existencia siguiendo el enlace:
 
-https://hub.docker.com/...
+https://hub.docker.com/repository/docker/lupinbustamante/mi-nginx
